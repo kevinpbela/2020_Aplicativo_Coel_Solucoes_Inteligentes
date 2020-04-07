@@ -1,2 +1,2 @@
-# 2020_Artefatos_Solu-es-Inteligentes
+# 2020_Artefatos_Solucoes_Inteligentes
 Artefatos da OPE
