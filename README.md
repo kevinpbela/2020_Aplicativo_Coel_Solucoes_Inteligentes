@@ -1,2 +1,2 @@
-# 2020_Artefatos_Solucoes_Inteligentes
+# 2020_Aplicativo_Coel_Solucoes_Inteligentes
 Artefatos da OPE
