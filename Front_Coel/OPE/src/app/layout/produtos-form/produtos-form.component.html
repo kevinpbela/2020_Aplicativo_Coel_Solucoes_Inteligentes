@@ -1,0 +1,98 @@
+<form class="form-row" novalidate [formGroup]="form">
+    <div class="form-group col-md-1">
+        <label>Modelo</label>
+        <input type="text" class="form-control" id="modelo" formControlName="modelo"
+            [ngClass]="{ 'is-invalid': submitted && hasError('modelo')}">
+    </div>
+
+    <div class="form-group col-md-2">
+        <label>Função</label>
+        <input type="text" class="form-control" id="funcao" formControlName="funcao"
+            [ngClass]="{ 'is-invalid': submitted && hasError('funcao')}">
+    </div>
+
+    <div class="form-group col-md-6">
+        <label>Descriçao Reduzida</label>
+        <input type="text" class="form-control" id="descricaoReduzida" formControlName="descricaoReduzida"
+            [ngClass]="{ 'is-invalid': submitted && hasError('descricaoReduzida')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Categoria</label>
+        <input type="text" class="form-control" id="categoria" formControlName="categoria"
+            [ngClass]="{ 'is-invalid': submitted && hasError('categoria')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Sub categoria 1</label>
+        <input type="text" class="form-control" id="subCategoria1" formControlName="subCategoria1"
+            [ngClass]="{ 'is-invalid': submitted && hasError('subCategoria1')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Sub categoria 2</label>
+        <input type="text" class="form-control" id="subCategoria2" formControlName="subCategoria2"
+            [ngClass]="{ 'is-invalid': submitted && hasError('subCategoria2')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Sub categoria 3</label>
+        <input type="text" class="form-control" id="subCategoria3" formControlName="subCategoria3"
+            [ngClass]="{ 'is-invalid': submitted && hasError('subCategoria3')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Sub categoria 4</label>
+        <input type="text" class="form-control" id="subCategoria4" formControlName="subCategoria4"
+            [ngClass]="{ 'is-invalid': submitted && hasError('subCategoria4')}">
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Aplicação para navegação</label>
+        <textarea rows="3" type="text" id="aplicacaoNavegacao" class="form-control mb-1"
+            formControlName="aplicacaoNavegacao"
+            [ngClass]="{ 'is-invalid': submitted && hasError('aplicacaoNavegacao')}"></textarea>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Descrição</label>
+        <textarea rows="3" type="text" id="descricao" class="form-control mb-1" formControlName="descricao"
+            [ngClass]="{ 'is-invalid': submitted && hasError('descricao')}"></textarea>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Caracteristicas</label>
+        <textarea rows="3" type="text" id="caracteristicas" formControlName="caracteristicas" class="form-control mb-1"
+            [ngClass]="{ 'is-invalid': submitted && hasError('caracteristicas')}"></textarea>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Aplicações</label>
+        <textarea rows="3" type="text" id="aplicacoes" class="form-control mb-1" formControlName="aplicacoes"
+            [ngClass]="{ 'is-invalid': submitted && hasError('aplicacoes')}"></textarea>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Manuais</label>
+        <textarea rows="3" type="text" id="manuais" class="form-control mb-1" formControlName="manuais"
+            [ngClass]="{ 'is-invalid': submitted && hasError('manuais')}"></textarea>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Categoria de venda</label>
+        <textarea rows="3" type="text" id="categoriaVenda" formControlName="categoriaVenda" class="form-control mb-1"
+            [ngClass]="{ 'is-invalid': submitted && hasError('categoriaVenda')}"></textarea>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label for="inputAddress">Fotos</label>
+        <input type="file" class="form-control-file" id="foto" formControlName="fotos">
+    </div>
+
+
+
+    <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+        <button type="button" class="btn btn-default" (click)="onCancel()">Cancelar</button>
+    </div>
+</form>

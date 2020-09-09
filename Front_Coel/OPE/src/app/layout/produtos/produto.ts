@@ -1,4 +1,5 @@
 export class Produto {
+    id: number
     modelo: string
     funcao: string
     descricaoReduzida: string

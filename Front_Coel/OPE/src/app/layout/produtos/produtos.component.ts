@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Produto } from './produto'
+import { Observable, empty, Subject } from 'rxjs';
+
+import { Produto } from './produto';
+import { ProdutosService } from './produtos.service';
+import { catchError } from 'rxjs/operators';
+import { BsModalRef } from 'ngx-bootstrap/modal';
+import { ModeloAlertaService } from '../shared/modelo-alerta.service'
 
 @Component({
   selector: 'app-produtos',
@@ -8,15 +14,30 @@ import { Produto } from './produto'
 })
 export class ProdutosComponent implements OnInit {
 
-  produto: Produto = new Produto()
+  bsModalRef: BsModalRef
 
-  constructor() { }
+  produtos$: Observable<Produto[]>;
+  error$ = new Subject<boolean>();
+
+
+  constructor(private produtosService: ProdutosService, private alertaServico: ModeloAlertaService) { }
 
   ngOnInit(): void {
+    this.produtos$ = this.produtosService.listarProdutos().pipe(catchError(error => {
+      console.error(error);
+      // this.error$.next(true)
+      this.handleError()
+      return empty()
+    }))
+
+    this.produtosService.listarProdutos().pipe(catchError(error => empty())).subscribe(dados => console.log(dados))
+
   }
 
-  savar(){
-    console.log(this.produto)
+  handleError() {
+
+    this.alertaServico.showAlertDanger('Erro ao carregar os produtos, tente nomamente mais tarde!')
+
   }
 
 }
