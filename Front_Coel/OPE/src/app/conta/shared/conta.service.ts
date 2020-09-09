@@ -12,7 +12,7 @@ export class ContaService {
 
   constructor(private http: HttpClient) { }
 
-  async login(usuario) {
+  async login(usuario: Usuario) {
 
     const resultado = await this.http.get<any>(`${environment.api}/usuario`).toPromise()
 

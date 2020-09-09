@@ -20,7 +20,7 @@ export class CriarContaComponent implements OnInit {
   async onSubmit(){
     try {
 
-      const resultado = await this.contaService.login(this.conta)
+      const resultado = await this.contaService.criarConta(this.conta)
       console.log(resultado)
       this.location.back()
 
