@@ -1,0 +1,21 @@
+<div class="container">
+    <br>
+    <div class="row">
+
+        <div class="form-group col-md-12">
+            <h3>Login</h3> <br>
+            <input #nome="ngModel" [(ngModel)]="usuario.nome" type="text" class="form-control" id="usuario"
+                placeholder="Usuario" required>
+        </div>
+
+        <div class="form-group col-md-12">
+            <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="senha" placeholder="Senha"
+                required>
+
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary" (click)="onSubmit()">Entrar</button>
+
+        <a class="btn btn-primary" href="/nova-conta">Criar conta</a>
+    </div>
+</div>
