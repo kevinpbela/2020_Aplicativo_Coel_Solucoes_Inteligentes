@@ -1,4 +1,20 @@
 {
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "alexandre",
+      "senha": "12345"
+    }
+  ],
+  "conta": [
+    {
+      "id": 1,
+      "nome": "Alexandre Marques",
+      "email": "alexandre@email.com",
+      "nomeUsuario": "alexandre",
+      "senha": 12345
+    }
+  ],
   "produtos": [
     {
       "id": 1,

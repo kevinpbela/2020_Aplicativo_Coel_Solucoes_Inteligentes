@@ -12,9 +12,9 @@ export class ContaService {
 
   constructor(private http: HttpClient) { }
 
-  async login(usuario: Usuario) {
+  async login(usuario) {
 
-    const resultado = await this.http.post<any>(`${environment.api}/conta/login`, usuario).toPromise()
+    const resultado = await this.http.get<any>(`${environment.api}/usuario`).toPromise()
 
     if (resultado && resultado.access_token) {
 
@@ -28,7 +28,7 @@ export class ContaService {
 
   async criarConta(conta: Conta) {
 
-    const resulado = await this.http.post<any>(`${environment.api}/usuarios`, conta).toPromise()
+    const resulado = await this.http.post<any>(`${environment.api}/conta`, conta).toPromise()
     return resulado
   }
 
