@@ -28,7 +28,7 @@ export class ContaService {
 
   async criarConta(conta: Conta) {
 
-    const resulado = await this.http.post<any>(`${environment.api}/conta`, conta).toPromise()
+    const resulado = await this.http.post<any>(`${environment.api}/usuario`, conta).toPromise()
     return resulado
   }
 

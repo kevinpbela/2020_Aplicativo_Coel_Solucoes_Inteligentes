@@ -1,8 +1,6 @@
 export class Conta {
 
-    id: string
+    id: number
     nome: string
-    email: string
-    nomeUsuario: string
     senha: string
 }
