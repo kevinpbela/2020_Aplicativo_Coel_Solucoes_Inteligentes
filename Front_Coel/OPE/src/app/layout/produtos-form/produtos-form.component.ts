@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { Produto } from '../produtos/produto';
 import { ProdutosService } from '../produtos/produtos.service';
 import { ModeloAlertaService } from '../shared/modelo-alerta.service';
 

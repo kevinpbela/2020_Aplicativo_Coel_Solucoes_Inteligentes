@@ -1,15 +1,17 @@
-<div class="container">
+<div class="form-row" novalidate [formGroup]="form">
     <br>
     <div class="row">
 
         <h3>Criar conta</h3>
 
         <div class="form-group col-md-12">
-            <input type="text" [(ngModel)]="criaUsuario.nome" class="form-control" id="nome" placeholder="Nome Completo" required >
+            <input type="text" class="form-control" id="nome" formControlName="nome" placeholder="Usuario"
+                [ngClass]="{ 'is-invalid': submitted && hasError('nome')}">
         </div>
 
         <div class="form-group col-md-12">
-            <input type="password" [(ngModel)]="criaUsuario.senha" class="form-control" id="senha" placeholder="Senha" required>
+            <input type="password" formControlName="senha" class="form-control" id="senha" placeholder="Senha"
+                [ngClass]="{ 'is-invalid': submitted && hasError('senha')}">
 
         </div>
 

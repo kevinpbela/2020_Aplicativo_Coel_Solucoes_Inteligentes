@@ -1,16 +1,16 @@
-<div class="container">
+<div class="form-row" novalidate [formGroup]="form">
     <br>
     <div class="row">
 
         <div class="form-group col-md-12">
             <h3>Login</h3> <br>
-            <input #nome="ngModel" [(ngModel)]="usuario.nome" type="text" class="form-control" id="usuario"
-                placeholder="Usuario" required>
+            <input  formControlName="nome" type="text" class="form-control" id="nome"
+                placeholder="Usuario" [ngClass]="{ 'is-invalid': submitted && hasError('nome')}">
         </div>
 
         <div class="form-group col-md-12">
-            <input [(ngModel)]="usuario.senha" type="password" class="form-control" id="senha" placeholder="Senha"
-                required>
+            <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="Senha"
+                [ngClass]="{ 'is-invalid': submitted && hasError('senha')}">
 
         </div>
 

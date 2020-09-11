@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Usuario } from '../login/usuario';
+import { take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,24 +12,29 @@ export class ContaService {
 
   constructor(private http: HttpClient) { }
 
-  async login(usuario: Usuario) {
 
-    const resultado = await this.http.get<Usuario>(`${environment.api}/usuario`).toPromise()
+  async login(usuario) {
 
-    if (resultado.nome == usuario.nome && resultado.senha == usuario.senha) {
+    const resultado = await this.http.get<Usuario[]>(`${environment.api}/usuario`).toPromise()
 
-      window.localStorage.setItem('token', resultado.nome)
-      return true
+    // console.log(usuario.nome)
+    // console.log(resultado)
+
+
+    for (let index = 0; index < resultado.length; index++) {
+      if (resultado[index]['nome'] == usuario.nome && resultado[index]['senha'] == usuario.senha) {
+        window.localStorage.setItem('token', 'meu token')
+        return true
+      } 
 
     }
     return false
 
+
   }
 
-  async criarConta(criaUsuario: Usuario) {
-
-    const resulado = await this.http.post<any>(`${environment.api}/usuario`, criaUsuario).toPromise()
-    return resulado
+  criarConta(criaUsuario) {
+    return this.http.post(`${environment.api}/usuario`, criaUsuario).pipe(take(1))
   }
 
 }
