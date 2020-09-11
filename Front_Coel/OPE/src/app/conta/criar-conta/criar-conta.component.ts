@@ -1,7 +1,7 @@
 import { ContaService } from './../shared/conta.service';
-import { Conta } from './conta';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
+import { Usuario } from '../login/usuario';
 
 @Component({
   selector: 'app-criar-conta',
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class CriarContaComponent implements OnInit {
 
-  conta: Conta = new Conta()
+  criaUsuario: Usuario = new Usuario()
 
   constructor(private contaService: ContaService, private location: Location) { }
 
@@ -20,7 +20,7 @@ export class CriarContaComponent implements OnInit {
   async onSubmit(){
     try {
 
-      const resultado = await this.contaService.criarConta(this.conta)
+      const resultado = await this.contaService.criarConta(this.criaUsuario)
       console.log(resultado)
       this.location.back()
 

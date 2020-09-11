@@ -2,7 +2,6 @@ import { environment } from './../../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Conta } from './../criar-conta/conta';
 import { Usuario } from '../login/usuario';
 
 @Injectable({
@@ -14,11 +13,11 @@ export class ContaService {
 
   async login(usuario: Usuario) {
 
-    const resultado = await this.http.get<any>(`${environment.api}/usuario`).toPromise()
+    const resultado = await this.http.get<Usuario>(`${environment.api}/usuario`).toPromise()
 
-    if (resultado && resultado.access_token) {
+    if (resultado.nome == usuario.nome && resultado.senha == usuario.senha) {
 
-      window.localStorage.setItem('token', resultado.access_token)
+      window.localStorage.setItem('token', resultado.nome)
       return true
 
     }
@@ -26,9 +25,9 @@ export class ContaService {
 
   }
 
-  async criarConta(conta: Conta) {
+  async criarConta(criaUsuario: Usuario) {
 
-    const resulado = await this.http.post<any>(`${environment.api}/usuario`, conta).toPromise()
+    const resulado = await this.http.post<any>(`${environment.api}/usuario`, criaUsuario).toPromise()
     return resulado
   }
 
