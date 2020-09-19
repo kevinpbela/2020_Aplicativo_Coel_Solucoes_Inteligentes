@@ -22,7 +22,7 @@ export class ContaService {
 
 
     for (let index = 0; index < resultado.length; index++) {
-      if (resultado[index]['nome'] == usuario.nome && resultado[index]['senha'] == usuario.senha) {
+      if (resultado[index]['login'] == usuario.login && resultado[index]['senha'] == usuario.senha) {
         window.localStorage.setItem('token', 'meu token')
         return true
       } 

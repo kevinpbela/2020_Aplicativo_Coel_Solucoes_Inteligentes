@@ -22,8 +22,8 @@ export class CriarContaComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      id: [],
-      nome: [null, [Validators.required]],
+      id_usuario: [null, [Validators.required]],
+      login: [null, [Validators.required]],
       senha: [null, [Validators.required]]
     })
   }
@@ -47,7 +47,7 @@ export class CriarContaComponent implements OnInit {
         erros => this.modal.showAlertDanger("Erro ao criar usuario"),
         () => console.log("Request OK")
       )
-
+      this.location.back()
     }
 
   }

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
 
     this.form = this.fb.group({
-      nome: [null, [Validators.required]],
+      login: [null, [Validators.required]],
       senha: [null, [Validators.required]]
     })
   }
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
       const resultado = await this.contaService.login(this.form.value)
       // console.log(this.form.value)
       console.log(`login efetudado: ${resultado}`)
+      console.log(resultado)
 
       if (resultado == false) {
         this.handleError()

@@ -4,9 +4,14 @@
 
         <h3>Criar conta</h3>
 
-        <div class="form-group col-md-12">
-            <input type="text" class="form-control" id="nome" formControlName="nome" placeholder="Usuario"
-                [ngClass]="{ 'is-invalid': submitted && hasError('nome')}">
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="id_usuario" formControlName="id_usuario" placeholder="CPF"
+                [ngClass]="{ 'is-invalid': submitted && hasError('id_usuario')}">
+        </div>
+
+        <div class="form-group col-md-6">
+            <input type="text" class="form-control" id="login" formControlName="login" placeholder="Usuario"
+                [ngClass]="{ 'is-invalid': submitted && hasError('login')}">
         </div>
 
         <div class="form-group col-md-12">

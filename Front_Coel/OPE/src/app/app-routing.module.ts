@@ -16,7 +16,7 @@ const routes: Routes = [
       { path: 'novo', component: ProdutosFormComponent },
       { path: 'editar/:id', component: ProdutosFormComponent }
     ],
-    //canActivate: [AutenticacaoGuard]
+    canActivate: [AutenticacaoGuard]
   },
   {
     path: '', component: AutenticacaoComponent, children: [
