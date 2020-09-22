@@ -2,7 +2,6 @@ import { ContaService } from './../shared/conta.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-import { Usuario } from './usuario';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModeloAlertaService } from 'src/app/layout/shared/modelo-alerta.service';
 

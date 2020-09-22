@@ -1,7 +1,6 @@
 import { ContaService } from './../shared/conta.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Usuario } from '../login/usuario';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ModeloAlertaService } from 'src/app/layout/shared/modelo-alerta.service';
 
@@ -15,15 +14,16 @@ export class CriarContaComponent implements OnInit {
   form: FormGroup
   submitted = false
 
-  criaUsuario: Usuario = new Usuario()
-
   constructor(private fb: FormBuilder, private contaService: ContaService,
     private location: Location, private modal: ModeloAlertaService) { }
 
   ngOnInit(): void {
+
     this.form = this.fb.group({
-      id_usuario: [null, [Validators.required]],
+      id: [] = "1",
+      email:[null, [Validators.required]],
       login: [null, [Validators.required]],
+      nome: [null, [Validators.required]],
       senha: [null, [Validators.required]]
     })
   }
@@ -48,6 +48,7 @@ export class CriarContaComponent implements OnInit {
         () => console.log("Request OK")
       )
       this.location.back()
+      this.modal.showAlertSuccess("Sucesso na criação")
     }
 
   }
