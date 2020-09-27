@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Aplicativo_Coel</string>
+    <string name="app_name">Cross Reference</string>
+    <string name="mensagem_login">Bem Vindo!</string>
+    <string name="login_solicitacao">Faça seu login</string>
+    <string name="logo_coel">TODO</string>
+    <string name="campo_usuario">Usuário</string>
+    <string name="campo_senha">Senha</string>
+    <string name="botao_login">Login</string>
 </resources>
