@@ -11,7 +11,8 @@ import kotlinx.android.synthetic.main.toolbar.*
 class TelaInicialActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tela_inicial)
+        //setContentView(R.layout.activity_tela_inicial)
+        setContentView(R.layout.toolbar)
 
         // modo de pegar os dados enviados por outra tela
         //alunoval args = intent.extras
