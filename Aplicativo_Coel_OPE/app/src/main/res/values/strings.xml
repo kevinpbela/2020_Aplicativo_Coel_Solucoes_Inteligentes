@@ -6,4 +6,8 @@
     <string name="campo_usuario">Usuário</string>
     <string name="campo_senha">Senha</string>
     <string name="botao_login">Login</string>
+    <string name="action_buscar">Buscar</string>
+    <string name="action_atualizar">action_atualizar</string>
+    <string name="action_config">Configurações</string>
+    <string name="texto_titulo_menu">Referência cruzada</string>
 </resources>
