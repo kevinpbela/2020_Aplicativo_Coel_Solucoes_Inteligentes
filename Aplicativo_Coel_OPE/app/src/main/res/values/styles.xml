@@ -5,6 +5,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorButtonNormal</item>
+    </style>
+
+    <!-- Criar um novo menu (ation bar) herdando as cores anteriores  -->
+    <style name="AppTheme.Toolbar" parent="AppTheme">
+        <item name="windowActionBar">false</item>  <!-- Desabilita a action bar -->
+        <item name="windowNoTitle">true</item>  <!-- Desabilita o titulo da action bar -->
     </style>
 
 </resources>
