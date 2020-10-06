@@ -1,18 +1,20 @@
 from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
-from main import coel_app
+from routes.routes_produto import coel_produto
+from routes.routes_usuario import coel_usuario
 import requests as Req
-import infra.usuario_db as usuario_db
 
 app = Flask(__name__)
-app.register_blueprint(coel_app)
+app.register_blueprint(coel_produto)
+app.register_blueprint(coel_usuario)
 CORS(app)
 
 @app.route('/')
 def all():
-    return Req.get("http://localhost:5000/usuario").json()
+    usuario = Req.get("http://localhost:3000/usuario").json()
+    produto = Req.get("http://localhost:3000/produto").json()
+    return usuario, produto
 
-# usuario_db.init()
 
 if __name__ == '__main__':
     app.run(host='localhost', port=3000)

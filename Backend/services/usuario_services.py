@@ -1,4 +1,4 @@
-from infra.usuario_dao import \
+from infra.usuario.usuario_dao import \
     listar as dao_listar, \
     consultar as dao_consultar, \
     cadastrar as dao_cadastrar

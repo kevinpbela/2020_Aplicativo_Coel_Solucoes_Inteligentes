@@ -8,7 +8,7 @@ server = "coel.database.windows.net"
 database = "Aplicativo"
 username = "Adriano"
 password = "Coelmatic01"
-driver = '{ODBC Driver 17 for SQL Server}'
+driver = '{SQL Server}'
 
 str_conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server +
                           ';DATABASE='+database+';UID='+username+';PWD=' + password)
