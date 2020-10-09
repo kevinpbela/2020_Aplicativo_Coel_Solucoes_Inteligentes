@@ -1,19 +1,21 @@
 export class Produto {
-    id: number
-    modelo: string
+    id_produto: number
+    alimentacao: string
+    caracteristica: string
+    categoria_venda: string
+    certificado: string
+    codigo_pedido: number
+    descricao_completa: string
+    descricao_reduzida: string
+    fabricante: string
     funcao: string
-    descricaoReduzida: string
-    categoria: string
-    subCategoria1: string
-    subCategoria2: string
-    subCategoria3: string
-    subCategoria4: string
-    aplicacaoNavegacao: string
-    descricao: string
-    caracteristicas: string
-    aplicacoes: string
-    manuais: string
-    categoriaVenda: string
-    fotos: string
-
+    id_categoria: number
+    modelo: string
+    montagem: string
+    status: string
+    tag: string
+    id_parametros: number
+    id_equivalencia: number
+    id_historico: number
+    id_ligacoes: number
 }

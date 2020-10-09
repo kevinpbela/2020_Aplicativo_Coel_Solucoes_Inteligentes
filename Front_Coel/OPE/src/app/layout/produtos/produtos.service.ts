@@ -13,10 +13,10 @@ export class ProdutosService {
   constructor(private http: HttpClient) { }
 
   listarProdutos() {
-    return this.http.get<Produto[]>(`${environment.api}/produtos`).pipe(delay(1000), tap(console.log))
+    return this.http.get<Produto[]>(`${environment.api}/produto`).pipe(delay(1000), tap(console.log))
   }
 
   criarProdutos(produto) {
-    return this.http.post(`${environment.api}/produtos`, produto).pipe(take(1))
+    return this.http.post(`${environment.api}/produto`, produto).pipe(take(1))
   }
 }

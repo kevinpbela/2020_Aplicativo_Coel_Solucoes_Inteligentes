@@ -22,22 +22,25 @@ export class ProdutosFormComponent implements OnInit {
 
     this.form = this.fb.group({
 
-      id: [],
-      modelo: [null, [Validators.required, Validators.maxLength(5)]],
-      funcao: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      descricaoReduzida: [null, [Validators.required, Validators.minLength(3)]],
-      categoria: [null, [Validators.required, Validators.minLength(3)]],
-      subCategoria1: [null, [Validators.required]],
-      subCategoria2: [null, [Validators.required]],
-      subCategoria3: [null, [Validators.required]],
-      subCategoria4: [null, [Validators.required]],
-      aplicacaoNavegacao: [null, [Validators.required, Validators.maxLength(200)]],
-      descricao: [null, [Validators.required, Validators.maxLength(200)]],
-      caracteristicas: [null, [Validators.required, Validators.maxLength(200)]],
-      aplicacoes: [null, [Validators.required, Validators.maxLength(200)]],
-      manuais: [null, [Validators.required, Validators.maxLength(200)]],
-      categoriaVenda: [null, [Validators.required, Validators.maxLength(200)]],
-      fotos: [null]
+      id_produto: [],
+      alimentacao: [null, [Validators.required]],
+      caracteristica: [null, [Validators.required]],
+      categoria_venda: [null, [Validators.required]],
+      certificado: [null, [Validators.required]],
+      codigo_pedido: [null, [Validators.required]],
+      descricao_completa: [null, [Validators.required]],
+      descricao_reduzida: [null, [Validators.required]],
+      fabricante: [null, [Validators.required]],
+      funcao: [null, [Validators.required]],
+      id_categoria: [],
+      modelo: [null, [Validators.required]],
+      montagem: [null, [Validators.required]],
+      status: [null, [Validators.required]],
+      tag: [null, [Validators.required]],
+      id_parametros:[],
+      id_equivalencia:[],
+      id_historico:[],
+      id_ligacoes:[]
 
     })
 

@@ -38,7 +38,8 @@ def alterar_produto(id_produto):
                                   produto_data["descricao_completa"], produto_data["descricao_reduzida"],
                                   produto_data["fabricante"], produto_data["funcao"], produto_data["id_categoria"],
                                   produto_data["modelo"], produto_data["montagem"], produto_data["status"], produto_data["tag"],
-                                  produto_data["id_parametros"])
+                                  produto_data["id_parametros"],
+                                  produto_data["id_equivalencia"], produto_data["id_historico"], produto_data["id_ligacoes"])
 
     if atualizado is not None:
         return jsonify(atualizado), 200

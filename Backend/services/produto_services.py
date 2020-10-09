@@ -37,11 +37,13 @@ def remover(id):
 def atualizar(id_produto, alimentacao, caracteristica, categoria_venda,
               certificado, codigo_pedido, descricao_completa, descricao_reduzida,
               fabricante, funcao, id_categoria, modelo, montagem, status,
-              tag, id_parametros):
+              tag, id_parametros,
+              id_equivalencia, id_historico, id_ligacoes):
     produto = Produto.criar({"id_produto": id_produto, "alimentacao": alimentacao, "caracteristica": caracteristica,
                              "categoria_venda": categoria_venda, "certificado": certificado, "codigo_pedido": codigo_pedido,
                              "descricao_completa": descricao_completa, "descricao_reduzida": descricao_reduzida,
                              "fabricante": fabricante, "funcao": funcao, "id_categoria": id_categoria, "modelo": modelo,
-                             "montagem": montagem, "status": status, "tag": tag, "id_parametros": id_parametros})
+                             "montagem": montagem, "status": status, "tag": tag, "id_parametros": id_parametros,
+                             "id_equivalencia": id_equivalencia, "id_historico": id_historico, "id_ligacoes": id_ligacoes})
     dao_alterar(produto)
     return localizar(id)
