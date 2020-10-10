@@ -1,0 +1,30 @@
+
+h3 {
+    text-align: center;
+    margin-left: 40%;
+    margin-bottom: 15px;
+}
+
+.row {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.form-group {
+    text-align: center;
+}
+
+.btn-outline-primary {
+    margin-left: 2%;
+    width: 96%;
+}
+
+.btn-primary {
+    margin-top: 10px;
+    margin-left: 83.3%;
+}

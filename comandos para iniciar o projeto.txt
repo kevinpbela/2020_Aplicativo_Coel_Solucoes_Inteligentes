@@ -1,0 +1,13 @@
+comandos para iniciar o projeto
+
+front-end
+
+na pasta do projeto
+	npm install - instalar novas dependencias
+	ng serve - subir o front
+
+back-end
+
+na pasta do projeto ou virtualenv
+	pip install -r requirements.txt - instalar as dependencias do python
+	python app.py - subir o back
