@@ -1,20 +1,21 @@
-import { AutenticacaoGuard } from './conta/shared/autenticacao.guard';
-import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NgModule, Component } from '@angular/core';
 
-import { CriarContaComponent } from './conta/criar-conta/criar-conta.component';
-import { HomeComponent } from './layout/home/home.component';
-import { ProdutosComponent } from './layout/produtos/produtos.component';
-import { LoginComponent } from './conta/login/login.component';
-import { AutenticacaoComponent } from './layout/autenticacao/autenticacao.component';
-import { ProdutosFormComponent } from './layout/produtos-form/produtos-form.component';
+import { AutenticacaoGuard } from './shared/autenticacao.guard';
+
+import { ProdutosListarComponent } from './components/produtos-listar/produtos-listar.component';
+import { AutenticacaoComponent } from 'src/app/components/autenticacao/autenticacao.component';
+import { CriarContaComponent } from 'src/app/components/criar-conta/criar-conta.component';
+import { LoginComponent } from 'src/app/components/login/login.component';
+import { HomeComponent } from 'src/app/components/home/home.component';
+import { ProdutosCriarComponent } from './components/produtos-criar/produtos-criar.component';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
-      { path: '', component: ProdutosComponent },
-      { path: 'novo', component: ProdutosFormComponent },
-      { path: 'editar/:id', component: ProdutosFormComponent }
+      { path: '', component: ProdutosListarComponent },
+      { path: 'novo', component: ProdutosCriarComponent },
+      { path: 'editar/:id', component: ProdutosCriarComponent }
     ],
     canActivate: [AutenticacaoGuard]
   },

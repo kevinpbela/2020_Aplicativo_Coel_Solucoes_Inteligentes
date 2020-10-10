@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { environment } from './../../../environments/environment';
 import { tap, delay, take } from 'rxjs/operators';
-import { Produto } from './produto';
+
+import { Produto } from 'src/app/models/produto';
+
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'

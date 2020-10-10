@@ -1,16 +1,16 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 
-import { ProdutosService } from '../produtos/produtos.service';
-import { ModeloAlertaService } from '../shared/modelo-alerta.service';
+import { ModeloAlertaService } from 'src/app/shared/modelo-alerta.service';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
-  selector: 'app-produtos-form',
-  templateUrl: './produtos-form.component.html',
-  styleUrls: ['./produtos-form.component.css']
+  selector: 'app-produtos-criar',
+  templateUrl: './produtos-criar.component.html',
+  styleUrls: ['./produtos-criar.component.css']
 })
-export class ProdutosFormComponent implements OnInit {
+export class ProdutosCriarComponent implements OnInit {
 
   form: FormGroup
   submitted = false
@@ -37,10 +37,10 @@ export class ProdutosFormComponent implements OnInit {
       montagem: [null, [Validators.required]],
       status: [null, [Validators.required]],
       tag: [null, [Validators.required]],
-      id_parametros:[],
-      id_equivalencia:[],
-      id_historico:[],
-      id_ligacoes:[]
+      id_parametros: [],
+      id_equivalencia: [],
+      id_historico: [],
+      id_ligacoes: []
 
     })
 
@@ -74,6 +74,5 @@ export class ProdutosFormComponent implements OnInit {
     this.submitted = false
     this.form.reset()
   }
-
 
 }

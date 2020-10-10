@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, empty, Subject } from 'rxjs';
 
-import { Produto } from './produto';
-import { ProdutosService } from './produtos.service';
+import { empty, Observable, Subject } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+
 import { BsModalRef } from 'ngx-bootstrap/modal';
-import { ModeloAlertaService } from '../shared/modelo-alerta.service'
+
+import { Produto } from 'src/app/models/produto';
+
+import { ModeloAlertaService } from 'src/app/shared/modelo-alerta.service';
+import { ProdutosService } from 'src/app/services/produtos.service';
 
 @Component({
-  selector: 'app-produtos',
-  templateUrl: './produtos.component.html',
-  styleUrls: ['./produtos.component.css']
+  selector: 'app-produtos-listar',
+  templateUrl: './produtos-listar.component.html',
+  styleUrls: ['./produtos-listar.component.css']
 })
-export class ProdutosComponent implements OnInit {
+export class ProdutosListarComponent implements OnInit {
 
   bsModalRef: BsModalRef
 
   produtos$: Observable<Produto[]>;
   error$ = new Subject<boolean>();
-
 
   constructor(private produtosService: ProdutosService, private alertaServico: ModeloAlertaService) { }
 

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
 import { ModeloAlertaComponent } from './modelo-alerta/modelo-alerta.component';
 
 export enum TiposAlertas {

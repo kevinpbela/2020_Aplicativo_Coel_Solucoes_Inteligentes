@@ -1,9 +1,9 @@
-import { ContaService } from './../shared/conta.service';
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModeloAlertaService } from 'src/app/layout/shared/modelo-alerta.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ModeloAlertaService } from 'src/app/shared/modelo-alerta.service';
+import { ContaService } from 'src/app/services/conta.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +11,6 @@ import { ModeloAlertaService } from 'src/app/layout/shared/modelo-alerta.service
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  // usuario: Usuario = new Usuario();
 
   form: FormGroup
   submitted = false
@@ -39,7 +37,6 @@ export class LoginComponent implements OnInit {
     try {
 
       const resultado = await this.contaService.login(this.form.value)
-      // console.log(this.form.value)
       console.log(`login efetudado: ${resultado}`)
       console.log(resultado)
 

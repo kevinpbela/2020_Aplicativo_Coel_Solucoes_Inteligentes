@@ -1,8 +1,9 @@
-import { ContaService } from './../shared/conta.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModeloAlertaService } from 'src/app/layout/shared/modelo-alerta.service';
+
+import { ModeloAlertaService } from 'src/app/shared/modelo-alerta.service';
+import { ContaService } from 'src/app/services/conta.service';
 
 @Component({
   selector: 'app-criar-conta',

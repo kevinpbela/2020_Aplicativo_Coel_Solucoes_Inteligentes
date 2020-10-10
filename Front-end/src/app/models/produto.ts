@@ -1,7 +1,7 @@
 export class Produto {
     id_produto: number
     alimentacao: string
-    caracteristica: string
+    caracteristicas: string
     categoria_venda: string
     certificado: string
     codigo_pedido: number
