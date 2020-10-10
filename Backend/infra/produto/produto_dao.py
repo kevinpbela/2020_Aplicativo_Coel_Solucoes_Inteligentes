@@ -55,7 +55,7 @@ def consultar(id):
 def cadastrar(produto):
     with str_conn as conn:
         with conn.cursor() as cursor:
-            sql = f"INSERT INTO {model_name} (alimentacao, caracteristica, categoria_venda, certificado, codigo_pedido, descricao_completa, descricao_reduzida, fabricante, funcao, id_categoria, modelo, montagem, status, tag, id_parametros, id_equivalencia, id_historico, id_ligacoes (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+            sql = f"INSERT INTO {model_name} (alimentacao, caracteristica, categoria_venda, certificado, codigo_pedido, descricao_completa, descricao_reduzida, fabricante, funcao, id_categoria, modelo, montagem, status, tag, id_parametros, id_equivalencia, id_historico, id_ligacoes VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             cursor.execute(sql, (produto.alimentacao, produto.caracteristica, produto.categoria_venda, produto.certificado,
                                  produto.codigo_pedido, produto.descricao_completa, produto.descricao_reduzida,
                                  produto.fabricante, produto.funcao, produto.id_categoria, produto.modelo, produto.montagem,

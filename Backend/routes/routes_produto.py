@@ -25,7 +25,7 @@ def cadastrar_produto():
 
     produto = service_criar_produto(novo_produto)
     if produto is None:
-        return jsonify({'erro': 'aluno ja existe'}), 400
+        return jsonify({'erro': 'produto ja existe'}), 400
     return jsonify(produto)
 
 

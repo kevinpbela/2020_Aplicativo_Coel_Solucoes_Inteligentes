@@ -19,11 +19,9 @@ def localizar(id):
     return produto.__dict__()
 
 
-def criar(produto):
-    # if localizar(produto['id']) is None:
-    produto = Produto.criar(produto)
+def criar(produto_dados):
+    produto = Produto.criar(produto_dados)
     return dao_cadastrar(produto)
-    # return None
 
 
 def remover(id):

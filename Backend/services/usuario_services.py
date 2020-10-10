@@ -17,8 +17,6 @@ def localizar(id):
     return usuario.__dict__()
 
 
-def criar(usuario):
-    # if localizar(usuario['id']) is None:
-    usuario = Usuario.criar(usuario)
+def criar(usuario_dados):
+    usuario = Usuario.criar(usuario_dados)
     return dao_cadastrar(usuario)
-    # return None

@@ -31,8 +31,7 @@ def listar():
 def consultar(id):
     with str_conn as conn:
         with conn.cursor() as cursor:
-            cursor.execute(
-                f"SELECT * FROM {model_name} WHERE id = ?", (int(id),))
+            cursor.execute(f"SELECT * FROM {model_name} WHERE id = ?", (int(id),))
             row = cursor.fetchone()
             if row is None:
                 return None
@@ -46,5 +45,5 @@ def cadastrar(usuario):
             cursor.execute(sql, (usuario.email, usuario.login,
                                  usuario.nome, usuario.senha))
             conn.commit()
-            return usuario.__dict__()
             conn.close()
+            return usuario.__dict__()
