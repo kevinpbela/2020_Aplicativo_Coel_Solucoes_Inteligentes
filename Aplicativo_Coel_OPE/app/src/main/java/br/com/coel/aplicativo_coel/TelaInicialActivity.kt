@@ -5,14 +5,21 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_tela_inicial.*
+import kotlinx.android.synthetic.main.navigation_view.*
 import kotlinx.android.synthetic.main.toolbar.*
 
-class TelaInicialActivity : AppCompatActivity() {
+class TelaInicialActivity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_tela_inicial)
-        setContentView(R.layout.toolbar)
+        setContentView(R.layout.activity_tela_inicial)
+        //setContentView(R.layout.toolbar)
+
+        this.genericLayoutMenu = layoutMenuLateral
+        this.genericMenuLateral = menu_lateral
 
         // modo de pegar os dados enviados por outra tela
         //alunoval args = intent.extras
@@ -25,6 +32,8 @@ class TelaInicialActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_view)  // Seleciona a toolbar criada no layout
         supportActionBar?.title = getString(R.string.texto_titulo_menu) // Modo para definir texto do menu
         supportActionBar?.setDisplayHomeAsUpEnabled(true)  // habilita botão de retorno no menu
+
+        configuraMenuLateral()
     }
 
     // Sobrescrevendo método de criação do menu de opções da tela
