@@ -58,6 +58,12 @@ open class DebugActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
                 val intent = Intent(this, ForumActivity::class.java)
                 startActivity(intent)
             }
+            R.id.nav_sair -> {
+                onDestroy()
+            }
+            R.id.nav_home -> {
+                val intent = Intent(this, TelaInicialActivity::class.java)
+                startActivity(intent)}
         }
         genericLayoutMenu?.closeDrawer(GravityCompat.START)
         return true
