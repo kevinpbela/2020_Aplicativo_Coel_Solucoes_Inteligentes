@@ -1,9 +1,10 @@
+# Imports
 import sqlite3
 import pyodbc
 from contextlib import closing
 from model.usuario import Usuario
 
-
+# String de conexão com Banco
 server = "coel.database.windows.net"
 database = "Aplicativo"
 username = "Adriano"
@@ -13,9 +14,11 @@ driver = '{SQL Server}'
 str_conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server +
                           ';DATABASE='+database+';UID='+username+';PWD=' + password)
 
+# Tabela
 model_name = "usuario"
 
 
+# Query que lista tudo da tabela
 def listar():
     with str_conn as conn:
         with conn.cursor() as cursor:
@@ -28,6 +31,7 @@ def listar():
             return registros
 
 
+# Query que consulta por ID a tabela
 def consultar(login):
     with str_conn as conn:
         with conn.cursor() as cursor:
@@ -39,6 +43,7 @@ def consultar(login):
             return ({"id_usuario": row[0], "login": row[1], "senha": row[2]})
 
 
+# Query que insere os dados na tabela
 def cadastrar(usuario):
     with str_conn as conn:
         with conn.cursor() as cursor:

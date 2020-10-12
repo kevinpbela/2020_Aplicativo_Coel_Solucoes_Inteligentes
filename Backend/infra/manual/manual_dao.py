@@ -1,7 +1,9 @@
+# Imports
 import sqlite3
 import pyodbc
 from contextlib import closing
 
+# String de conexão com Banco
 server = "coel.database.windows.net"
 database = "Aplicativo"
 username = "Adriano"
@@ -11,9 +13,11 @@ driver = '{SQL Server}'
 str_conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server +
                           ';DATABASE='+database+';UID='+username+';PWD=' + password)
 
+# Tabela
 model_name = "manual"
 
 
+# Query que lista tudo da tabela
 def listar():
     with str_conn as conn:
         with conn.cursor() as cursor:
@@ -27,6 +31,7 @@ def listar():
             return registros
 
 
+# Query que consulta por ID a tabela
 def consultar(id):
     with str_conn as conn:
         with conn.cursor() as cursor:
