@@ -9,7 +9,7 @@
     <string name="action_buscar">Buscar</string>
     <string name="action_atualizar">action_atualizar</string>
     <string name="action_config">Configurações</string>
-    <string name="texto_titulo_menu">Referência cruzada</string>
+    <string name="texto_titulo_menu">Lista de Produtos</string>
     <string name="nav_produtos">Produtos</string>
     <string name="nav_forum">Forum</string>
     <string name="nav_mensagens">Mensagens</string>
@@ -18,7 +18,10 @@
     <string name="nav_drawer_open">Abrir</string>
     <string name="nav_drawer_close">Fechar</string>
     <string name="texto_titulo_mensagem">Mensagens</string>
-    <string name="texto_titulo_configuracao">Configurções</string>
+    <string name="texto_titulo_configuracao">Configurações</string>
     <string name="texto_titulo_forum">Forum</string>
     <string name="texto_titulo_produtos">Produtos</string>
+    <string name="nav_sair">Sair</string>
+    <string name="texto_titulo_descricao_produto">Descrição do produto</string>
+    <string name="nav_home">Tela inicial</string>
 </resources>
