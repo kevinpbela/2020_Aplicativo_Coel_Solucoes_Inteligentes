@@ -7,14 +7,14 @@ from model.usuario import Usuario
 
 
 def listar():
-    return [usuario.__dict__() for usuario in dao_listar()]
+    return [usuario for usuario in dao_listar()]
 
 
-def localizar(id):
-    usuario = dao_consultar(id)
+def localizar(login):
+    usuario = dao_consultar(login)
     if usuario is None:
         return None
-    return usuario.__dict__()
+    return usuario
 
 
 def criar(usuario_dados):

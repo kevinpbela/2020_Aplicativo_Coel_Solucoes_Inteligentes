@@ -1,8 +1,6 @@
 import sqlite3
 import pyodbc
 from contextlib import closing
-from model.usuario import Usuario
-
 
 server = "coel.database.windows.net"
 database = "Aplicativo"
@@ -13,7 +11,7 @@ driver = '{SQL Server}'
 str_conn = pyodbc.connect('DRIVER='+driver+';SERVER='+server +
                           ';DATABASE='+database+';UID='+username+';PWD=' + password)
 
-model_name = "usuario"
+model_name = "foto"
 
 
 def listar():
@@ -22,28 +20,18 @@ def listar():
             cursor.execute(f"SELECT * FROM {model_name}")
             rows = cursor.fetchall()
             registros = []
-            for (id_usuario, login, senha) in rows:
+            for (id_foto, foto) in rows:
                 registros.append(
-                    {"id_usuario": id_usuario, "login": login, "senha": senha})
+                    {"id_foto": id_foto, "foto": foto})
             return registros
 
 
-def consultar(login):
+def consultar(id):
     with str_conn as conn:
         with conn.cursor() as cursor:
             cursor.execute(
-                f"SELECT * FROM {model_name} WHERE login = ?", (login,))
+                f"SELECT * FROM {model_name} WHERE id_foto = ?", (id,))
             row = cursor.fetchone()
             if row is None:
                 return None
-            return ({"id_usuario": row[0], "login": row[1], "senha": row[2]})
-
-
-def cadastrar(usuario):
-    with str_conn as conn:
-        with conn.cursor() as cursor:
-            sql = f"INSERT INTO {model_name} (login, senha) VALUES (?, ?)"
-            cursor.execute(sql, (usuario.login, usuario.senha))
-            conn.commit()
-            # conn.close()
-            return usuario.__dict__()
+            return ({"id_foto": row[0], "foto": row[1]})
