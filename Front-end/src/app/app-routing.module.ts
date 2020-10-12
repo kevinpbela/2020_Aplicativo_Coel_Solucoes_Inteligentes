@@ -1,3 +1,5 @@
+import { ModeloAntigoListarComponent } from './components/modelo-antigo-listar/modelo-antigo-listar.component';
+import { ConcorrentesListarComponent } from './components/concorrentes-listar/concorrentes-listar.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule, Component } from '@angular/core';
 
@@ -15,9 +17,11 @@ const routes: Routes = [
     path: '', component: HomeComponent, children: [
       { path: '', component: ProdutosListarComponent },
       { path: 'novo', component: ProdutosCriarComponent },
-      { path: 'editar/:id', component: ProdutosCriarComponent }
+      { path: 'editar/:id', component: ProdutosCriarComponent },
+      { path: 'concorrente', component: ConcorrentesListarComponent },
+      { path: 'modelo_antigo', component: ModeloAntigoListarComponent }
     ],
-    canActivate: [AutenticacaoGuard]
+    // canActivate: [AutenticacaoGuard]
   },
   {
     path: '', component: AutenticacaoComponent, children: [

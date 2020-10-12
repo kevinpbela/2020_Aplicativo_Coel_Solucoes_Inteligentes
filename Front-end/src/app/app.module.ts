@@ -16,6 +16,10 @@ import { HomeComponent } from 'src/app/components/home/home.component';
 import { AppComponent } from './app.component';
 import { ProdutosListarComponent } from './components/produtos-listar/produtos-listar.component';
 import { ProdutosCriarComponent } from './components/produtos-criar/produtos-criar.component';
+import { ConcorrentesListarComponent } from './components/concorrentes-listar/concorrentes-listar.component';
+import { ConcorrentesCriarComponent } from './components/concorrentes-criar/concorrentes-criar.component';
+import { ModeloAntigoListarComponent } from './components/modelo-antigo-listar/modelo-antigo-listar.component';
+import { ModeloAntigoCriarComponent } from './components/modelo-antigo-criar/modelo-antigo-criar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,10 @@ import { ProdutosCriarComponent } from './components/produtos-criar/produtos-cri
     AutenticacaoComponent,
     ProdutosListarComponent,
     ProdutosCriarComponent,
+    ConcorrentesListarComponent,
+    ConcorrentesCriarComponent,
+    ModeloAntigoListarComponent,
+    ModeloAntigoCriarComponent,
 
   ],
   imports: [
