@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import kotlinx.android.synthetic.main.login.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : DebugActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login)
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             //Validação do login
             Thread {
                 // chama api de login enviando como parametro usuario e senha
-                var retornoLogin = false
+                var retornoLogin = true // alterar para false para ativar a validação do login
                 val usuario = "aluno"
                 val senha = "impacta"
 

@@ -9,8 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TelaInicialActivity"
-            android:theme="@style/AppTheme.Toolbar"></activity>  <!-- Define nova barra de menu -->
+        <activity android:name=".ProdutosActivity"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".ForumActivity"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".ConfiguracoesActivity"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".MensagensActivity"
+            android:theme="@style/AppTheme.Toolbar" />
+        <activity
+            android:name=".TelaInicialActivity"
+            android:theme="@style/AppTheme.Toolbar" /> <!-- Define nova barra de menu -->
+        <activity android:name=".DebugActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
