@@ -11,14 +11,17 @@ import { ProdutosCriarComponent } from './components/produtos-criar/produtos-cri
 import { CriarContaComponent } from 'src/app/components/criar-conta/criar-conta.component';
 import { LoginComponent } from 'src/app/components/login/login.component';
 import { HomeComponent } from 'src/app/components/home/home.component';
+import { ConcorrentesCriarComponent } from './components/concorrentes-criar/concorrentes-criar.component';
 
 const routes: Routes = [
   {
     path: '', component: HomeComponent, children: [
       { path: '', component: ProdutosListarComponent },
-      { path: 'novo', component: ProdutosCriarComponent },
+      { path: 'novo_produto', component: ProdutosCriarComponent },
       { path: 'editar/:id', component: ProdutosCriarComponent },
       { path: 'concorrente', component: ConcorrentesListarComponent },
+      { path: 'novo_concorrente', component: ConcorrentesCriarComponent },
+      { path: 'editar/:id', component: ConcorrentesCriarComponent },
       { path: 'modelo_antigo', component: ModeloAntigoListarComponent }
     ],
     // canActivate: [AutenticacaoGuard]

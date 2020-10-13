@@ -1,1 +1,31 @@
-<p>concorrentes-criar works!</p>
+<form class="form-row" novalidate [formGroup]="form">
+    <h4 class="form-group col-md-12">Cadastro de Concorrentes</h4><br>
+    <div class="form-group col-md-3">
+        <label>Codigo</label>
+        <input type="text" class="form-control" id="codigo_concorrente" formControlName="codigo_concorrente"
+            [ngClass]="{ 'is-invalid': submitted && hasError('codigo_concorrente')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Descricao</label>
+        <input type="text" class="form-control" id="descricao_concorrente" formControlName="descricao_concorrente"
+            [ngClass]="{ 'is-invalid': submitted && hasError('descricao_concorrente')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Empresa</label>
+        <input type="text" class="form-control" id="empresa_concorrente" formControlName="empresa_concorrente"
+            [ngClass]="{ 'is-invalid': submitted && hasError('empresa_concorrente')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Observação</label>
+        <input type="text" class="form-control" id="observacao_concorrente" formControlName="observacao_concorrente"
+            [ngClass]="{ 'is-invalid': submitted && hasError('observacao_concorrente')}">
+    </div>
+
+    <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+        <button type="button" class="btn btn-default" (click)="onCancel()">Cancelar</button>
+    </div>
+</form>

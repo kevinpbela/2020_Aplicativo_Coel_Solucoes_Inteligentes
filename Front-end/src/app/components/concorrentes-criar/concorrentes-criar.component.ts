@@ -1,4 +1,9 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
+import { ConcorrenteService } from './../../services/concorrente.service';
+import { ModeloAlertaService } from 'src/app/shared/modelo-alerta.service';
 
 @Component({
   selector: 'app-concorrentes-criar',
@@ -7,9 +12,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConcorrentesCriarComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup
+  submitted = false
+
+  constructor(private fb: FormBuilder, private services: ConcorrenteService,
+    private modal: ModeloAlertaService, private location: Location) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+
+      codigo_concorrente: [null, [Validators.required]],
+      descricao_concorrente: [null, [Validators.required]],
+      empresa_concorrente: [null, [Validators.required]],
+      observacao_concorrente: [null, [Validators.required]]
+    })
+  }
+
+  hasError(campo: string) {
+    return this.form.get(campo).errors
+  }
+
+  onSubmit() {
+    this.submitted = true
+    if (this.form.valid) {
+
+    }
+
+  }
+
+  onCancel() {
+    this.submitted = false
+    this.location.back()
   }
 
 }
