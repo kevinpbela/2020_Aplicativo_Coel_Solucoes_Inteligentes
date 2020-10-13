@@ -23,6 +23,7 @@ from routes.routes_manual import coel_manual
 # Imports internos com o crud implementado
 from routes.routes_concorrente import coel_concorrente
 from routes.routes_modelo_antigo import coel_modelo_antigo
+from routes.routes_produto import coel_produto
 
 
 app = Flask(__name__)
@@ -40,6 +41,7 @@ app.register_blueprint(coel_manual)
 
 app.register_blueprint(coel_concorrente)
 app.register_blueprint(coel_modelo_antigo)
+app.register_blueprint(coel_produto)
 CORS(app)
 
 
@@ -60,10 +62,11 @@ def all():
 
     concorrente = Req.get("http://localhost:3000/concorrente").json()
     modelo_antigo = Req.get("http://localhost:3000/modelo_antigo").json()
+    produto = Req.get("http://localhost:3000/produto").json()
 
     return (usuario, alimentacao, aplicacao, navegacao, categoria, funcao,
             foto, categoria_venda, certificado, montagem, manual,
-            concorrente, modelo_antigo)
+            concorrente, modelo_antigo, produto)
 
 
 if __name__ == '__main__':
