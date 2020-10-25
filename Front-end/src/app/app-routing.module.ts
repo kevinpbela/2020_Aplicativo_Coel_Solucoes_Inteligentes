@@ -4,6 +4,8 @@ import { NgModule, Component } from '@angular/core';
 import { AutenticacaoGuard } from './shared/autenticacao.guard';
 
 import { ModeloAntigoListarComponent } from './components/modelo-antigo-listar/modelo-antigo-listar.component';
+import { ModeloAntigoCriarComponent } from './components/modelo-antigo-criar/modelo-antigo-criar.component';
+
 import { ConcorrentesListarComponent } from './components/concorrentes-listar/concorrentes-listar.component';
 import { ProdutosListarComponent } from './components/produtos-listar/produtos-listar.component';
 import { AutenticacaoComponent } from 'src/app/components/autenticacao/autenticacao.component';
@@ -22,7 +24,8 @@ const routes: Routes = [
       { path: 'concorrente', component: ConcorrentesListarComponent },
       { path: 'novo_concorrente', component: ConcorrentesCriarComponent },
       { path: 'editar/:id', component: ConcorrentesCriarComponent },
-      { path: 'modelo_antigo', component: ModeloAntigoListarComponent }
+      { path: 'modelo_antigo', component: ModeloAntigoListarComponent },
+      { path: 'novo_modelo', component: ModeloAntigoCriarComponent }
     ],
     // canActivate: [AutenticacaoGuard]
   },

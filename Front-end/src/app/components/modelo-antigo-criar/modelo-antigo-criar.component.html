@@ -1,1 +1,25 @@
-<p>modelo-antigo-criar works!</p>
+<form class="form-row" novalidate [formGroup]="form">
+    <h4 class="form-group col-md-12">Cadastro de Modelo</h4><br>
+    <div class="form-group col-md-3">
+        <label>Descrição do Modelo</label>
+        <input type="text" class="form-control" id="descricao" formControlName="descricao"
+            [ngClass]="{ 'is-invalid': submitted && hasError('alimentacao')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Modelo</label>
+        <input type="text" class="form-control" id="modelo_antigo" formControlName="modelo"
+            [ngClass]="{ 'is-invalid': submitted && hasError('caracteristica')}">
+    </div>
+
+    <div class="form-group col-md-3">
+        <label>Observação do modelo antigo</label>
+        <input type="text" class="form-control" id="observacao" formControlName="observacao"
+            [ngClass]="{ 'is-invalid': submitted && hasError('categoria_venda')}">
+    </div>
+
+    <div class="form-group col-md-12">
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()">Salvar</button>
+        <button type="button" class="btn btn-default" (click)="onCancel()">Cancelar</button>
+    </div>
+</form>
