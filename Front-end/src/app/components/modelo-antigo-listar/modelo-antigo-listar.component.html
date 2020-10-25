@@ -1,1 +1,54 @@
-<p>modelo-antigo-listar works!</p>
+<div class="card">
+
+    <div class="card-header">
+
+        <div class="float-left">
+            <h3>Modelo Antigo</h3>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-primary" [routerLink]="['novo_modelo']">Novo Modelo</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless" *ngIf="modelos$ | async as modelos; else loadingError">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>Produto</th>
+                    <th>Função</th>
+                    <th>Categoria</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let modelo of modelos">
+                    <!-- <td>{{ produto.id }}</td> -->
+                    <td>{{ modelo.modelo }}</td>
+                    <td>{{ modelo.funcao }}</td>
+                    <td>{{ modelo.caracteristicas }}</td>
+                    <td>
+                        <span class="float-right">
+                            <button class="btn btn-outline-warning">Atualizar</button>
+                            <button class="btn btn-outline-danger">Remover</button>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #loadingError>
+            <div *ngIf="error$ | async; else loading">
+                Erro ao carregar os modelos, tente nomamente mais tarde!
+            </div>
+            <ng-template #loading>
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                </div>
+
+            </ng-template>
+
+        </ng-template>
+
+    </div>
+</div>
