@@ -6,7 +6,7 @@
             <h3>Modelo Antigo</h3>
         </div>
         <div class="float-right">
-            <button type="button" class="btn btn-primary" [routerLink]="['novo_modelo']">Novo Modelo</button>
+            <button type="button" class="btn btn-primary" [routerLink]="['/novo_modelo']">Novo Modelo</button>
         </div>
     </div>
     <div class="card-body">
@@ -22,10 +22,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let modelo of modelos">
-                    <!-- <td>{{ produto.id }}</td> -->
-                    <td>{{ modelo.modelo }}</td>
-                    <td>{{ modelo.funcao }}</td>
-                    <td>{{ modelo.caracteristicas }}</td>
+                    <td>{{ modelo.id_modelo_antigo }}</td>
+                    <td>{{ modelo.descricao_modelo_antigo }}</td>
+                    <td>{{ modelo.modelo_antigo }}</td>
+                    <td>{{ modelo.observacao_modelo_antigo }}</td>
+                    <td>{{ modelo.id_foto }}</td>
                     <td>
                         <span class="float-right">
                             <button class="btn btn-outline-warning">Atualizar</button>
