@@ -20,7 +20,6 @@ export class ConcorrentesCriarComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-
       codigo_concorrente: [null, [Validators.required]],
       descricao_concorrente: [null, [Validators.required]],
       empresa_concorrente: [null, [Validators.required]],
@@ -35,6 +34,15 @@ export class ConcorrentesCriarComponent implements OnInit {
   onSubmit() {
     this.submitted = true
     if (this.form.valid) {
+      console.log(this.form.value)
+      this.services.criarConcorrente(this.form.value).subscribe(
+        sucesso => {
+          this.modal.showAlertSuccess("Sucesso na criação")
+          this.location.back()
+        },
+        erro => this.modal.showAlertDanger("Erro ao criar concorrente"),
+        () => console.log("Request OK")
+      )
 
     }
 
