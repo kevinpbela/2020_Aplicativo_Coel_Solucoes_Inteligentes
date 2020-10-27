@@ -23,5 +23,20 @@
     }
   ],
   "modelo": [],
-  "concorrente": []
+  "concorrente": [
+    {
+      "id_concorrente": 1,
+      "codigo_concorrente": 123,
+      "descricao_concorrente": "asdasd",
+      "empresa_concorrente": "abc",
+      "observacao_concorrente": "acd"
+    },
+    {
+      "id": 2,
+      "codigo_concorrente": "asdasd",
+      "descricao_concorrente": "asdasd",
+      "empresa_concorrente": "asdasd",
+      "observacao_concorrente": "adasdsa"
+    }
+  ]
 }

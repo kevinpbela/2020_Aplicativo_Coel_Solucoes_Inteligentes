@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { delay, tap } from 'rxjs/operators';
+import { delay, take, tap } from 'rxjs/operators';
 
 import { environment } from './../../environments/environment';
 
@@ -16,5 +16,9 @@ export class ConcorrenteService {
 
   listarConcorrente(){
     return this.http.get<Concorrente[]>(`${environment.api}/concorrente`).pipe(delay(1000))
+  }
+
+  criarConcorrente(concorrente) {
+    return this.http.post(`${environment.api}/concorrente`, concorrente).pipe(take(1))
   }
 }
