@@ -13,19 +13,21 @@
         <table class="table table-borderless" *ngIf="produtos$ | async as produtos; else loadingError">
             <thead>
                 <tr>
-                    <!-- <th>Id</th> -->
-                    <th>Produto</th>
-                    <th>Função</th>
-                    <th>Categoria</th>
+                    <th>Id</th>
+                    <th>Alimentacao</th>
+                    <th>Categoria de venda</th>
+                    <th>Certificado</th>
+                    <th>Codigo do pedido</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let produto of produtos">
-                    <!-- <td>{{ produto.id }}</td> -->
-                    <td>{{ produto.modelo }}</td>
-                    <td>{{ produto.funcao }}</td>
-                    <td>{{ produto.caracteristicas }}</td>
+                    <td>{{ produto.id_produto }}</td>
+                    <td>{{ produto.alimentacao }}</td>
+                    <td>{{ produto.categoria_venda }}</td>
+                    <td>{{ produto.certificado }}</td>
+                    <td>{{ produto.codigo_pedido }}</td>
                     <td>
                         <span class="float-right">
                             <button class="btn btn-outline-warning">Atualizar</button>
